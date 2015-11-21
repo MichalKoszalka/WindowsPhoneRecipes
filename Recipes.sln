@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recipes", "Pyszności\Recipes.csproj", "{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|ARM.ActiveCfg = Debug|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|ARM.Build.0 = Debug|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|ARM.Deploy.0 = Debug|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|x86.ActiveCfg = Debug|x86
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|x86.Build.0 = Debug|x86
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Debug|x86.Deploy.0 = Debug|x86
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|ARM.ActiveCfg = Release|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|ARM.Build.0 = Release|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|ARM.Deploy.0 = Release|ARM
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|x86.ActiveCfg = Release|x86
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|x86.Build.0 = Release|x86
+		{C0CD4EBD-B231-4E64-B066-04BBAEA0FE98}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

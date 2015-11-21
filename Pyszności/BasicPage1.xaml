@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="Pyszności.BasicPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pyszności"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel.Recipe, RelativeSource={RelativeSource Self}}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:Name="LayoutRoot">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="Recipes" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock TextWrapping="WrapWholeWords" Text="{Binding Title}" Margin="0,-6.5,0,26.5" Style="{ThemeResource SubheaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+            <ProgressBar x:Name="myIndeterminateProbar" IsIndeterminate="True" Height="70" Margin="10,0,-10,0"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <Image x:Name="imageView"></Image>
+                    <ListView Name="Ingredients" ItemsSource="{Binding Ingredients}" HorizontalAlignment="Left" SelectionMode="Extended" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"
+                       Margin="0,19,19,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,9.5">
+                                    <TextBlock
+                                    Text="{Binding}"   
+                                    TextWrapping="Wrap"
+                                    Pivot.SlideInAnimationGroup="1"
+                                    CommonNavigationTransitionInfo.IsStaggerElement="True"
+                                    Style="{ThemeResource ListViewItemTextBlockStyle}"
+                                    Margin="0,0,19,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="AddFavouriteAppBarButton" x:Name="AddFavouriteAppBarButton" Label="favourite" Icon="Favorite" Click="AddFavouriteAppBarButton_Click" />
+            <AppBarButton x:Uid="RemoveFavouriteAppBarButton" x:Name="RemoveFavouriteAppBarButton" Label="unfavourite" Icon="UnFavorite" Click="RemoveFavouriteAppBarButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

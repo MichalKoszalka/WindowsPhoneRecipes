@@ -1,0 +1,99 @@
+﻿<Page
+    x:Class="Pyszności.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pyszności"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    >
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                    <CommonNavigationTransitionInfo IsStaggeringEnabled="True"/>
+                </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid>
+        <Pivot x:Uid="Pivot" Title="Recipes" x:Name="pivot" CommonNavigationTransitionInfo.IsStaggerElement="True">
+            <!--Pivot item one-->
+            <PivotItem
+                x:Uid="PivotItem1"
+                Margin="19,14.5,0,0"
+                Header="Popular recipes"
+                CommonNavigationTransitionInfo.IsStaggerElement="True">
+                <!--Double line list with text wrapping-->
+                <ScrollViewer>
+                <StackPanel>
+                  <ProgressBar x:Name="myIndeterminateProbar" IsIndeterminate="True" Height="70" Margin="10,0,-10,0"/>
+                  <TextBox x:Name="searchBox" Margin="0,0,0,10" TextWrapping="Wrap" Visibility="Collapsed" TextChanged="searchBox_TextChanged"/>                        
+                  <ListView
+                    Name="RecipesLV"
+                    ItemsSource="{Binding PopularRecipes}"
+                    IsItemClickEnabled="True"
+                    ItemClick="ListView_ItemClick"
+                    ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Margin="0,0,0,9.5">
+                                <TextBlock
+                                    TextWrapping="Wrap"
+                                    Pivot.SlideInAnimationGroup="1"
+                                    CommonNavigationTransitionInfo.IsStaggerElement="True"
+                                    Style="{ThemeResource ListViewItemTextBlockStyle}"
+                                    Margin="0,0,25,0"
+                                    Text="{Binding Title}">
+                                </TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+
+
+            <PivotItem
+                x:Uid="PivotItem2"
+                Margin="19,14.5,0,0"
+                Header="Favourites"
+                CommonNavigationTransitionInfo.IsStaggerElement="True" Loaded="PivotItem_Loaded">
+                <!--Double line list with text wrapping-->
+                <StackPanel>
+                    <ListView
+                    ItemsSource="{Binding FavouriteRecipes}"
+                    IsItemClickEnabled="True"
+                    ItemClick="ListView_ItemClick"
+                    ContinuumNavigationTransitionInfo.ExitElementContainer="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="0,0,0,9.5">
+                                    <TextBlock
+                                    TextWrapping="Wrap"
+                                    Pivot.SlideInAnimationGroup="1"
+                                    CommonNavigationTransitionInfo.IsStaggerElement="True"
+                                    Style="{ThemeResource ListViewItemTextBlockStyle}"
+                                    Margin="0,0,25,0"
+                                    Text="{Binding Title}">
+                                    </TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </PivotItem>
+
+        </Pivot>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="RefreshAppBarButton" x:Name="RefreshAppBarButton" Label="refresh" Icon="Refresh" Click="RefreshAppBarButton_Click" />
+            <AppBarButton x:Uid="SearchAppBarButton" x:Name="SearchAppBarButton" Label="search" Icon="Find" Click="SearchAppBarButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
